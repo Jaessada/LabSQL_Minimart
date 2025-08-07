@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตรวจสอบสิทธิ์เข้าใช้งาน</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <script language="JavaScript">
+        function Checkform() {
+            if (document.login.username.value==""){
+                alert("กรุณากรอกข้อมูล ชื่อผู้ใช้งาน");
+                document.login.username.focus();
+                return false;
+            }
+            if (document.login.password.value=="") {
+                alert("กรุณากรอกข้อมูล รหัสผ่าน");
+                document.login.password.focus();
+                return false;
+            }
+            document.login.submit();
+            
+        }
+    </script>
+</head>
+<body>
+    <table width="70%" style="margin-top: 100px;margin-left: auto; margin-right: auto;">
+        <tr>
+            <td>
+                <form action="checklogin.php" name="login" onsubmit="javaScript:return Checkform();" method="post">
+                    <div class="card text-center mb-3" style="width: 18rem; margin-left: auto; margin-right: auto;">
+                        <div class="card-body">ตรวจสอบสิทธิ์เข้าใช้งาน</div>
+                        <div class="card-body">
+                            <h6 class="card-title">กรุณากรอกข้อมูลเพื่อเข้าใช้งาน</h6>
+                            
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="user" id="username" placeholder="ชื่อผู้ใช้งาน">
+                                <label for="username">ชื่อผู้ใช้งาน</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" name="pass" id="password" placeholder="รหัสผ่าน">
+                                <label for="password">รหัสผ่าน</label>
+                            </div><br>
+                            <input class="btn btn-success" type="submit" value="ตกลง">&nbsp;
+                            <input class="btn btn-danger" type="reset" value="กรอกใหม่">
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
